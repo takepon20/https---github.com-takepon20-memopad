@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./stayle.css">
+<title>収支管理アプリ</title>
+</head>
+<body>
+<h1>家計簿アプリ</h1>
+
+<h2>入 力</h2>
+<div class="input_area">
+ <!-- ラジオボタンで収入/支出を選択 -->
+ <label><input type="radio" name="type" value="income" checked> 収入</label>
+ <label><input type="radio" name="type" value="expense"> 支出</label>
+
+ <!-- 収入の項目を選択 -->
+ <div id="income-categories" style="display: block;">
+  <select id="income-options">
+    <option value="給料">給料</option>
+    <option value="配当">配当</option>
+    <option value="年金">年金</option>
+  </select>
+ </div>
+
+ <!-- 支出の項目を選択 -->
+ <div id="expense-categories" style="display: none;">
+  <select id="expense-options">
+    <option value="家賃">家賃</option>
+    <option value="水道光熱費">水道光熱費</option>
+    <option value="ローン">ローン</option>
+    <option value="食料">食料</option>
+    <option value="税金">税金</option>
+    <option value="外食">外食</option>
+    <option value="衣料">衣料</option>
+    <option value="医療">医療</option>
+    <option value="その他">その他</option>
+  </select>
+ </div>
+
+ <!-- 金額を入力 -->
+ <input type="number" id="amount" placeholder="金額を入力">
+
+ <!-- セーブボタン -->
+ <button id="save">セーブ</button>
+</div>
+
+
+<h2>履 歴</h2>
+<div class="display_area">
+ <div class="income_area">
+  <h3>収入一覧</h3>
+  <div id="income-history"></div>
+ </div>
+ <div class="expense_area">
+  <h3>支出一覧</h3>
+  <div id="expense-history"></div>
+ </div>
+</div>
+
+<footer>Gsファイナンス</footer>
+
+<script src="./jvascript.js"></script>
+</body>
+</html>
